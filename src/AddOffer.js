@@ -16,7 +16,8 @@ function AddOffer() {
     const { id } = await firebase.firestore().collection("offers").add(offer);
     setOutputId(id);
     const copymsg = inputs.title + "\n" + inputs.body + "\n";
-    const productlink = "https://couponsandoffer.github.io/product/" + outputId;
+    const productlink =
+      "https://couponsandoffer.github.io/#/product/" + outputId;
     setOutput(copymsg + productlink);
   }
 
