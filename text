@@ -1,0 +1,31 @@
+
+> offerandcoupons@0.1.0 start
+> npm run watch:css && react-scripts start
+
+
+> offerandcoupons@0.1.0 watch:css
+> postcss src/assets/tailwind.css -o src/assets/main.css
+
+Starting the development server...
+
+Compiled with warnings.
+
+src/Product.js
+  Line 17:6:  React Hook useEffect has a missing dependency: 'getProduct'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+assets by path static/js/*.js 2.52 MiB
+  asset static/js/bundle.js 2.51 MiB [emitted] (name: main) 1 related asset
+  asset static/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js 6.94 KiB [emitted] 1 related asset
+asset index.html 1.67 KiB [emitted]
+asset asset-manifest.json 458 bytes [emitted]
+cached modules 2.36 MiB [cached] 123 modules
+runtime modules 31.3 KiB 15 modules
+./src/Product.js 2.31 KiB [built] [code generated]
+
+WARNING in src/Product.js
+  Line 17:6:  React Hook useEffect has a missing dependency: 'getProduct'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+webpack 5.70.0 compiled with 1 warning in 2167 ms
