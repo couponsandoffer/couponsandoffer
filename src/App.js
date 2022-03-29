@@ -12,10 +12,10 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/addoffer" element={<AddOffer />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/product/:id" element={<Product />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/addoffer" element={<AddOffer />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/product/:id" element={<Product />} />
       </Routes>
       <Footer />
     </Router>

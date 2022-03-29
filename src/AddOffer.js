@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 
 function AddOffer() {
   const [inputs, setInputs] = useState([]);
-  const [output, setOutput] = useState(null);
-  const ref = firebase.firestore().collection("offers");
+  const [outputId, setOutputId] = useState(null);
+  const [output, setOutput] = useState("");
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -12,13 +12,12 @@ function AddOffer() {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  function addoffer(offer) {
-    ref
-      .doc(offer.id)
-      .set(offer)
-      .catch((err) => {
-        console.error(err);
-      });
+  async function addoffer(offer) {
+    const { id } = await firebase.firestore().collection("offers").add(offer);
+    setOutputId(id);
+    const copymsg = inputs.title + "\n" + inputs.body + "\n";
+    const productlink = "https://couponsandoffer.github.io/product/" + outputId;
+    setOutput(copymsg + productlink);
   }
 
   const handleSubmit = (event) => {
@@ -26,11 +25,11 @@ function AddOffer() {
     const value = new Date().getTime();
     setInputs((values) => ({ ...values, ["date"]: value }));
     addoffer(inputs);
-    const copymsg = inputs.title + "\n" + inputs.body + "\n";
   };
 
   return (
     <div className="container-fluid">
+      <textarea class="form-control" rows="4"></textarea>
       <form onSubmit={handleSubmit}>
         <div className="d-flex form-outline flex-column justify-content-center">
           <div className="form-group">
@@ -60,7 +59,11 @@ function AddOffer() {
           <input className="btn btn-primary" type="submit" />
         </div>
       </form>
-      <input type="text" value="JJSDF" />
+      <textarea
+        class="form-control"
+        value={outputId !== null ? output : ""}
+        rows="4"
+      ></textarea>
     </div>
   );
 }
