@@ -1,10 +1,10 @@
 import firebase from "./firebase";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function AddOffer() {
-  const [inputs, setInputs] = useState([]);
+  const [inputs, setInputs] = useState({});
   const [outputId, setOutputId] = useState(null);
-  const [output, setOutput] = useState("");
+  const [output, setOutput] = useState();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -13,8 +13,8 @@ function AddOffer() {
   };
 
   async function addoffer(offer) {
+    offer["date"] = new Date().getTime();
     const { id } = await firebase.firestore().collection("offers").add(offer);
-    setOutputId(id);
     const copymsg = inputs.title + "\n" + inputs.body + "\n";
     const productlink =
       "https://couponsandoffer.github.io/#/product/" + outputId;
@@ -23,8 +23,6 @@ function AddOffer() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const value = new Date().getTime();
-    setInputs((values) => ({ ...values, ["date"]: value }));
     addoffer(inputs);
   };
 
@@ -62,7 +60,7 @@ function AddOffer() {
       </form>
       <textarea
         class="form-control"
-        value={outputId !== null ? output : ""}
+        value={outputId !== null ? outputId : ""}
         rows="4"
       ></textarea>
     </div>

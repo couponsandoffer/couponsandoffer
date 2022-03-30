@@ -9,7 +9,10 @@ function Home() {
 
   useEffect(() => {
     const getOffers = () => {
-      const ref = firebase.firestore().collection("offers");
+      const ref = firebase
+        .firestore()
+        .collection("offers")
+        .orderBy("date", "desc");
       setLoading(true);
       ref.onSnapshot((querySnapshot) => {
         const items = [];
