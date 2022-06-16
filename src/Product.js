@@ -54,7 +54,7 @@ const Product = () => {
                       </div>
                       <div className="m-1 p-1">
                         <a
-                          href="https://t.me/newcouponandcode"
+                          href="https://telegram.me/newcouponandcode"
                           class="btn btn-primary"
                         >
                           <i class="far fa-paper-plane"> JOIN US </i>
