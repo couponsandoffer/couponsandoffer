@@ -66,6 +66,36 @@ const Product = () => {
               </div>
             </div>
           </div>
+          <div className="m-2 p-2">
+            <h4> Disclaimer </h4>
+            <ul>
+              <li>
+                <b>
+                  Due to "different sellers" or "offer ended," you could
+                  occasionally encounter variations in product prices.
+                </b>
+              </li>
+              <li>
+                <b>
+                  As of the date/time specified above, the product prices and
+                  availability were correct, but they are liable to change. This
+                  product can be purchased using any pricing and availability
+                  details that are listed on the merchant's website at the time
+                  of purchase.
+                </b>
+              </li>
+              <li>
+                <b>
+                  The quality, usability, safety, morality, or legality of any
+                  component of the items advertised, the truth or correctness of
+                  the listings, or the capacity of sellers to sell items or
+                  respect their coupon or promotion are all things that{" "}
+                  <a href="https://couponsandoffer.in">couponsandoffer.in</a>{" "}
+                  has no control over and does not guarantee or warrant.
+                </b>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
     </div>
