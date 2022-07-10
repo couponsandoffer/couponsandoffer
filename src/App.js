@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route, HashRouter as Router } from "react-router-dom";
 import AddOffer from "./AddOffer";
-import Home from "./Home";
+import Home from "./pages/Home";
 import Product from "./Product";
 import Header from "./Header";
 import Footer from "./Footer";
-import About from "./About";
+import About from "./pages/About";
 
 function App() {
   return (

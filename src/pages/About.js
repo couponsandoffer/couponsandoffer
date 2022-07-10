@@ -1,5 +1,4 @@
-import { React } from "react";
-import img from "./assets/images/campaign-creators-OGOWDVLbMSc-unsplash.jpg";
+import img from "../assets/images/campaign-creators-OGOWDVLbMSc-unsplash.jpg";
 
 const About = () => {
   return (
