@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export const Card = ({ id, title, img }) => {
   return (
     <div key={id}>
-      <div className="card hover-shadow">
+      <div className="card hover-shadow" style={{ height: "25rem" }}>
         <div
-          className="d-flex justify-content-center bg-image hover-zoom ripple"
+          className="d-flex  justify-content-center bg-image hover-zoom ripple"
           data-mdb-ripple-color="light"
         >
           <img

@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import firebase from "./firebase";
-import withLoading from "./components/Loading";
+import firebase from "../firebase";
+import withLoading from "../components/Loading";
 
 const Product = () => {
   const _id = useParams().id;
   const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    setLoading(true);
     const ref = firebase.firestore().collection("offers").doc(_id);
     const getProduct = () => {
       ref.get().then((snapshot) => {
         const docData = snapshot.data();
         setProduct(docData);
-        setLoading(false);
       });
     };
     getProduct();

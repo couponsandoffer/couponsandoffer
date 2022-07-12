@@ -12,7 +12,6 @@ const offerRefs = firebase
 function Home(props) {
   const [offers, setOffers] = useState([]);
   const [lastOffer, setLastOffer] = useState();
-  const [search_query, setSearchQuery] = useState("");
   const { setLoading } = props;
 
   useEffect(() => {
@@ -25,10 +24,11 @@ function Home(props) {
   }, []);
 
   const updateState = (collections) => {
-    const items = [];
+    var items = [];
     collections.forEach((doc) => {
       items.push({ id: doc.id, ...doc.data() });
     });
+
     setOffers((offers) => [...offers, ...items]);
     setLoading(false);
     const lastDoc = collections.docs[collections.docs.length - 1];
